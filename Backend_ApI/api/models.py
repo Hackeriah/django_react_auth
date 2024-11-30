@@ -34,7 +34,7 @@ class Category(models.Model):
         return self.name    
     
 class Course(models.Model):
-    title = models.TextField(max_length=255)
+    title = models.CharField(max_length=255)
     description = models.TextField()
     instructor = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='courses')
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, related_name='courses')
